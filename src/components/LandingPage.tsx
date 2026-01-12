@@ -217,21 +217,21 @@ export function LandingPage() {
 
 			{/* Waitlist Section */}
 			<section id="waitlist" className="bg-[#2d4494] px-6 lg:px-20 py-24">
-				<div className="max-w-[400px] mx-auto text-center">
+				<div className="max-w-[900px] mx-auto text-center">
 					{/* Heading */}
-					<h2 className="text-white text-[36px] md:text-[48px] font-bold mb-4">
+					<h2 className="text-white text-[48px] font-bold mb-6">
 						Join Our Waitlist
 					</h2>
 
 					{/* Description */}
-					<p className="text-white/90 text-[15px] md:text-[17px] leading-relaxed mb-6">
+					<p className="text-white/90 text-[17px] leading-relaxed mb-8 max-w-[700px] mx-auto break-words">
 						Be the first to know about discounts, offers, and events weekly in
 						your mailbox. Unsubscribe anytime.
 					</p>
 
 					{/* Form */}
-					<form onSubmit={handleSubmit} className="w-full flex justify-center">
-						<div className="relative w-full rounded-full overflow-hidden bg-white/10 border border-white/20 flex items-center">
+					<form onSubmit={handleSubmit} className="w-full mx-auto px-0">
+						<div className="relative rounded-full overflow-hidden bg-white/10 border border-white/20 flex items-center w-full max-w-[700px] mx-auto">
 							{/* Email Icon */}
 							<div className="absolute left-4 flex items-center h-full">
 								<EmailIcon className="text-gray-400" />
@@ -243,13 +243,13 @@ export function LandingPage() {
 								value={email}
 								onChange={(e) => setEmail(e.target.value)}
 								placeholder="Enter your email"
-								className="flex-1 pl-12 pr-24 py-3 bg-transparent text-white placeholder:text-white/60 focus:outline-none text-[15px] rounded-full"
+								className="flex-1 pl-12 pr-28 py-4 bg-transparent text-white placeholder:text-white/60 focus:outline-none text-[15px] rounded-full"
 							/>
 
 							{/* Submit Button */}
 							<button
 								type="submit"
-								className="absolute right-1 top-1/2 -translate-y-1/2 px-4 py-2 bg-white text-[#2d4494] text-[14px] rounded-full hover:bg-gray-100 transition font-semibold"
+								className="absolute right-1 top-1/2 -translate-y-1/2 px-6 py-3 bg-white text-[#2d4494] text-[15px] rounded-full hover:bg-gray-100 transition font-semibold"
 							>
 								Submit
 							</button>
