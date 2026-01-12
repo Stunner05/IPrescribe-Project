@@ -20,10 +20,10 @@ import {
 	IconButton,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
-import { loginUser } from "../../api/mockApi";
 import { useAuthStore } from "../../store/authStore";
 import Logo from "../../assets/images/IpLogo.png";
 import { useNavigate } from "react-router-dom";
+import { loginUser } from "../../api/auth";
 
 // Zod validation
 const loginSchema = z.object({
@@ -48,18 +48,30 @@ export function LoginPage() {
 	const loginMutation = useMutation({
 		mutationFn: () => loginUser(email, password),
 		onSuccess: (data) => {
-			if (data.success && data.user) {
-				login(data.user, rememberMe);
+			const user = data.data.user;
+			const token = data.data.token;
+
+			if (user && token) {
+				login(
+					{
+						email: user.email,
+						name: user.first_name || "User",
+						role: user.roles[0]?.name || "User",
+					},
+					token, // <-- pass token here
+					rememberMe // <-- rememberMe is now third argument
+				);
+
 				navigate("/dashboard");
-			} else {
-				setFieldErrors({
-					email: "Invalid credentials",
-					password: "Invalid credentials",
-				});
 			}
 		},
+		onError: () => {
+			setFieldErrors({
+				email: "Invalid credentials",
+				password: "Invalid credentials",
+			});
+		},
 	});
-
 	const textFieldSX = {
 		"& .MuiOutlinedInput-root": {
 			backgroundColor: "#f9fafb",
