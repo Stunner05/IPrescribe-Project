@@ -173,13 +173,6 @@ export const fetchPatients = async (
 			"Memphis",
 			"Baltimore",
 		];
-		const statuses: ("active" | "inactive" | "pending")[] = [
-			"active",
-			"active",
-			"active",
-			"pending",
-			"inactive",
-		];
 
 		const devices: ("iOS" | "Android" | "Web")[] = ["iOS", "Android", "Web"];
 
