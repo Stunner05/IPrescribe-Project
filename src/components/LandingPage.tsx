@@ -43,39 +43,45 @@ export function LandingPage() {
 		<div className="min-h-screen bg-white">
 			{/* Header */}
 			<header className="bg-white px-6 lg:px-20 py-5 border-b border-gray-100 relative">
-				<div className="max-w-[1400px] mx-auto flex items-center justify-between">
+				<div className="max-w-[1400px] mx-auto flex items-center">
 					{/* Logo */}
 					<img src={logo} alt="iPrescribe" className="h-17" />
 
-					{/* Desktop Nav */}
-					<nav className="hidden md:flex items-center gap-12">
-						<a
-							href="#"
-							className="text-black hover:text-[#2d4494] transition text-[15px]"
-						>
-							Home
-						</a>
-						<a
-							href="#"
-							className="text-black hover:text-[#2d4494] transition text-[15px]"
-						>
-							Features
-						</a>
-						<a
-							href="#"
-							className="text-black hover:text-[#2d4494] transition text-[15px]"
-						>
-							Contact us
-						</a>
-					</nav>
+					{/* Spacer */}
+					<div className="flex-1"></div>
 
-					{/* Join Waitlist Button (always visible) */}
-					<button
-						onClick={handleScrollToWaitlist}
-						className="bg-[#2d4494] text-white px-7 py-2.5 rounded-full hover:bg-[#253a7a] transition text-[15px] font-medium"
-					>
-						Join Waitlist
-					</button>
+					{/* Desktop Nav + Button */}
+					<div className="hidden md:flex items-center gap-6">
+						{/* Nav */}
+						<nav className="flex items-center gap-12">
+							<a
+								href="#"
+								className="text-black hover:text-[#2d4494] transition text-[15px]"
+							>
+								Home
+							</a>
+							<a
+								href="#"
+								className="text-black hover:text-[#2d4494] transition text-[15px]"
+							>
+								Features
+							</a>
+							<a
+								href="#"
+								className="text-black hover:text-[#2d4494] transition text-[15px]"
+							>
+								Contact us
+							</a>
+						</nav>
+
+						{/* Join Waitlist Button */}
+						<button
+							onClick={handleScrollToWaitlist}
+							className="bg-[#2d4494] text-white px-7 py-2.5 rounded-full hover:bg-[#253a7a] transition text-[15px] font-medium ml-4"
+						>
+							Join Waitlist
+						</button>
+					</div>
 
 					{/* Mobile Hamburger */}
 					<button
