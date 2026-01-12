@@ -1,4 +1,6 @@
 /*! tailwindcss v4.1.3 | MIT License | https://tailwindcss.com */
+/* index.css */
+@import "tailwindcss";
 @layer properties {
 	@supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or
 		((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
@@ -346,10 +348,6 @@
 		height: auto;
 	}
 
-	[hidden]:where(:not([hidden="until-found"])) {
-		display: none !important;
-	}
-
 	* {
 		border-color: var(--border);
 		outline-color: var(--ring);
@@ -384,11 +382,11 @@
 		-moz-osx-font-smoothing: grayscale;
 	}
 
-	:where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) h1 {
+	/* :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) h1 {
 		font-size: var(--text-2xl);
 		font-weight: var(--font-weight-medium);
 		line-height: 1.5;
-	}
+	} */
 
 	:where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) h2 {
 		font-size: var(--text-xl);
@@ -418,22 +416,6 @@
 }
 
 @layer utilities {
-	.block {
-		display: block;
-	}
-
-	.flex {
-		display: flex;
-	}
-
-	.grid {
-		display: grid;
-	}
-
-	.hidden {
-		display: none;
-	}
-
 	.transform {
 		transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z)
 			var(--tw-skew-x) var(--tw-skew-y);
@@ -470,9 +452,9 @@
 :root {
 	--font-size: 16px;
 	--background: #fff;
-	--foreground: oklch(0.145 0 0);
+	--foreground: #111827; /* dark color for text */
 	--card: #fff;
-	--card-foreground: oklch(0.145 0 0);
+	--card-foreground: #111827;
 	--popover: oklch(1 0 0);
 	--popover-foreground: oklch(0.145 0 0);
 	--primary: #030213;
@@ -509,8 +491,8 @@
 }
 
 .dark {
-	--background: oklch(0.145 0 0);
-	--foreground: oklch(0.985 0 0);
+	--background: #111827;
+	--foreground: #f9fafb;
 	--card: oklch(0.145 0 0);
 	--card-foreground: oklch(0.985 0 0);
 	--popover: oklch(0.145 0 0);
@@ -649,4 +631,24 @@ html {
 @property --tw-drop-shadow-size {
 	syntax: "*";
 	inherits: false;
+}
+
+html,
+body {
+	width: 100%;
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+#root {
+	width: 100%;
+	overflow-x: hidden;
+}
+
+a {
+	text-decoration: none;
+}
+
+html {
+	scroll-behavior: smooth;
 }
