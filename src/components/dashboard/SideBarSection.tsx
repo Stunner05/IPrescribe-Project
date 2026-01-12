@@ -43,7 +43,7 @@ export const SidebarSection: React.FC<SidebarSectionProps> = ({
 					px: 2.5,
 					py: 1,
 					display: "block",
-					color: "text.secondary",
+					color: "#fff",
 					fontWeight: 600,
 					letterSpacing: 0.5,
 					textTransform: "uppercase",
@@ -67,9 +67,10 @@ export const SidebarSection: React.FC<SidebarSectionProps> = ({
 									mx: 2,
 									borderRadius: 2,
 									width: "100%",
+									color: "#fff", // always white for inactive
 									"&.Mui-selected": {
 										bgcolor: selectedBg,
-										color: selectedColor,
+										color: selectedColor, // active color
 										"&:hover": {
 											bgcolor:
 												selectedBg === "white"
@@ -77,14 +78,17 @@ export const SidebarSection: React.FC<SidebarSectionProps> = ({
 													: "primary.dark",
 										},
 										"& .MuiListItemIcon-root": {
-											color: selectedColor,
+											color: selectedColor, // icon color when active
 										},
+									},
+									"&:hover": {
+										bgcolor: "rgba(255,255,255,0.1)", // subtle hover for inactive
 									},
 								}}
 							>
 								<ListItemIcon
 									sx={{
-										color: isActive ? selectedColor : "#fff",
+										color: isActive ? selectedColor : "#fff", // force white if inactive
 										minWidth: 40,
 									}}
 								>
@@ -92,7 +96,10 @@ export const SidebarSection: React.FC<SidebarSectionProps> = ({
 								</ListItemIcon>
 								<ListItemText
 									primary={item.label}
-									primaryTypographyProps={{ variant: "body2" }}
+									primaryTypographyProps={{
+										variant: "body2",
+										color: "inherit", // inherit white or active color
+									}}
 								/>
 							</ListItemButton>
 						</ListItem>
