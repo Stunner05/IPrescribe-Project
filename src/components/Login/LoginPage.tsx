@@ -111,7 +111,7 @@ export function LoginPage() {
 				position: "relative",
 				overflow: "hidden",
 				background:
-					"linear-gradient(135deg, #2d4a8f 0%, #3b5ba5 50%, #1e3a8a 100%)",
+					"linear-gradient(to bottom, #2d4494 0%, #1f2e6a 45%, #0d1335 100%)",
 				p: 2,
 				"&::before": {
 					content: '""',
